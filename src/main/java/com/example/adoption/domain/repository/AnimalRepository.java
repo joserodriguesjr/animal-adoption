@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "animals", path = "animals")
-@Tag(name = "Animal Controller", description = "Animal Management Endpoints")
+@Tag(name = "Animal Controller", description = "Animal Adoption Endpoints")
 public interface AnimalRepository extends JpaRepository<Animal, Long> {}
