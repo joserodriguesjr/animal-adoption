@@ -7,6 +7,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @EntityListeners(AuditingEntityListener.class)
@@ -22,7 +23,7 @@ public class Animal {
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     @CreatedDate
-    @Column(name = "created_date", nullable = false, updatable = false)
+    @Column(name = "created_date")
     private Date createdDate;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
@@ -30,22 +31,23 @@ public class Animal {
     @Column(name = "last_modified_date")
     private Date lastModifiedDate;
 
-    @Column(name = "name", length = 255, nullable = false)
+    @Column(name = "name", length = 100, nullable = false)
     private String name;
 
-    @Column(name = "description", length = 255, nullable = true)
+    @Column(name = "description", length = 500)
     private String description;
 
-    @Column(name = "image_url", length = 255, nullable = true)
+    @Column(name = "image_url", length = 255)
     private String imageURL;
 
-    @Column(name = "category", length = 255, nullable = false)
+    @Column(name = "category", length = 100, nullable = false)
     private String category;
 
-    @Column(name = "birth_date", length = 255, nullable = false)
-    private Date birthDate;
+    @Column(name = "birth_date", nullable = false)
+    private LocalDate birthDate;
 
-    @Column(name = "status", length = 255, nullable = true)
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
     private Status status;
     public enum Status {DISPONIVEL, ADOTADO}
 }
