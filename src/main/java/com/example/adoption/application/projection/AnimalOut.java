@@ -1,4 +1,4 @@
-package com.example.adoption.domain.model.projection;
+package com.example.adoption.application.projection;
 
 import com.example.adoption.domain.model.Animal;
 import org.springframework.data.rest.core.config.Projection;
