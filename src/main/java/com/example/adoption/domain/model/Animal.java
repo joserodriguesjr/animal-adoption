@@ -37,7 +37,7 @@ public class Animal {
     @Column(name = "description", length = 500)
     private String description;
 
-    @Column(name = "image_url", length = 255)
+    @Column(name = "image_url")
     private String imageURL;
 
     @Column(name = "category", length = 100, nullable = false)
